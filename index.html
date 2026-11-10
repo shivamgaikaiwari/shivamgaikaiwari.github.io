@@ -107,7 +107,7 @@
         <p class="pitch">Live monitoring, savings tracking and alerts for waste heat recovery air preheaters.</p>
         <p class="stack">Python, FastAPI, SQLAlchemy, WebSockets, Chart.js, Docker, GitHub Actions</p>
         <p>Plant managers see how much heat each preheater recovers right now, what that's worth in fuel dollars and CO₂, and get warned before the three classic failures get expensive: cold-end corrosion, air leakage and fouling. Sensor data is simulated by one thread per unit, and the hosted demo injects a new fault every few minutes so you can watch alerts fire and resolve.</p>
-        <a class="shot" href="https://heatwatch.onrender.com/"><img src="img/heatwatch.jpg" width="1400" height="1080" alt="HeatWatch dashboard showing fleet totals for heat recovered, fuel savings and CO₂ avoided, health cards for four preheater units, and live temperature and pressure charts."></a>
+        <a class="shot" href="https://heatwatch-yts1.onrender.com/"><img src="img/heatwatch.jpg" width="1400" height="1080" alt="HeatWatch dashboard showing fleet totals for heat recovered, fuel savings and CO₂ avoided, health cards for four preheater units, and live temperature and pressure charts."></a>
         <ul class="points">
           <li>Telemetry pipeline with physics-checked validation, derived engineering metrics, and alert rules with hysteresis so borderline readings don't spam.</li>
           <li>Signed outbound webhooks (HMAC-SHA256) delivered by a worker pool with retries and backoff, plus a signed inbound webhook from a maintenance system with replay protection.</li>
@@ -115,8 +115,8 @@
           <li>A Python SDK, 59 tests including architecture tests that fail CI if a change breaks the layering, and a Docker image published on every push.</li>
         </ul>
         <div class="links">
-          <a class="btn primary" href="https://heatwatch.onrender.com/">Open the live demo</a>
-          <a class="btn secondary" href="https://heatwatch.onrender.com/docs">API docs</a>
+          <a class="btn primary" href="https://heatwatch-yts1.onrender.com/">Open the live demo</a>
+          <a class="btn secondary" href="https://heatwatch-yts1.onrender.com/docs">API docs</a>
           <a class="btn secondary" href="https://github.com/shivamgaikaiwari/HeatWatch">Source code</a>
         </div>
         <p class="hint">Hosted on a free server that sleeps when idle; the first visit can take up to a minute to wake it.</p>
