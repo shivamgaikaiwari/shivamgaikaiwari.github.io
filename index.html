@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shivam Gaikaiwari · Projects</title>
+  <meta name="description" content="Software projects by Shivam Gaikaiwari: HeatWatch, a real-time industrial monitoring platform, and Weather Report, an Android app with a web version.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1f2b'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%23f6f7f9'%3ESG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f7f9;
+      --surface: #ffffff;
+      --ink: #1a1f2b;
+      --ink-2: #555d6b;
+      --line: #dde1e7;
+      --link: #2457a6;
+      --heat: #d9572a;      /* HeatWatch's own orange */
+      --sky: #3f78bd;       /* Weather Report's blue */
+      --font: "Schibsted Grotesk", "Helvetica Neue", system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --paper: #11151c; --surface: #181d26; --ink: #e8ebf0; --ink-2: #a4adbb;
+        --line: #2a313d; --link: #8db4ef; --heat: #f08455; --sky: #7eaee6;
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #11151c; --surface: #181d26; --ink: #e8ebf0; --ink-2: #a4adbb;
+      --line: #2a313d; --link: #8db4ef; --heat: #f08455; --sky: #7eaee6;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--font); }
+    a { color: var(--link); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+    header { padding: 72px 0 40px; }
+    h1 { font-size: clamp(44px, 9vw, 76px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 750; margin: 0 0 20px; }
+    .intro { font-size: 20px; max-width: 34em; margin: 0 0 20px; color: var(--ink-2); }
+    .intro strong { color: var(--ink); font-weight: 650; }
+    .contact { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 600; }
+
+    .project { padding: 48px 0; border-top: 1px solid var(--line); }
+    .project h2 { font-size: 34px; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 8px; font-weight: 720; }
+    .project .pitch { font-size: 19px; margin: 0 0 16px; max-width: 36em; }
+    .project p { max-width: 38em; }
+    .stack { color: var(--ink-2); font-size: 15px; margin: 0 0 20px; }
+
+    /* The screenshot is the hero of each project; its edge carries the project's own color. */
+    .shot { display: block; margin: 24px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line);
+            box-shadow: 0 1px 0 var(--line), 0 18px 40px -24px rgba(20, 30, 50, 0.35); background: var(--surface); }
+    .shot img { display: block; width: 100%; height: auto; }
+    .heat .shot { border-top: 5px solid var(--heat); }
+    .sky .shot { border-top: 5px solid var(--sky); }
+    .sky .shot { max-width: 420px; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; }
+    .btn { display: inline-block; padding: 10px 18px; border-radius: 10px; font-weight: 650; text-decoration: none; }
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn.secondary { border: 1.5px solid var(--line); color: var(--ink); }
+    .btn:hover { filter: brightness(1.08); }
+    .hint { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
+
+    ul.points { padding-left: 20px; margin: 0; }
+    ul.points li { margin: 6px 0; max-width: 38em; }
+
+    .small h2 { font-size: 24px; }
+    .small dl { margin: 12px 0 0; }
+    .small dt { font-weight: 700; margin-top: 14px; }
+    .small dt a { color: var(--ink); }
+    .small dd { margin: 2px 0 0; color: var(--ink-2); max-width: 38em; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0 56px; color: var(--ink-2); font-size: 15px; }
+    @media (max-width: 560px) {
+      header { padding: 48px 0 28px; }
+      .intro { font-size: 18px; }
+      .project h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Shivam Gaikaiwari</h1>
+      <!-- EDIT: add your school, major and graduation year, e.g. "Computer Science student at ___ University, graduating 2028." -->
+      <p class="intro">I build software that turns raw data into something people can act on. Below are two projects you can try live: <strong>a real-time monitoring platform for industrial heat recovery</strong> and <strong>a weather app built natively for Android</strong>, with a browser version.</p>
+      <div class="contact">
+        <a href="https://github.com/shivamgaikaiwari">GitHub</a>
+        <!-- EDIT: uncomment and fill in the ones you want public -->
+        <!-- <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> -->
+        <!-- <a href="resume.pdf">Resume (PDF)</a> -->
+        <!-- <a href="mailto:you@example.com">Email</a> -->
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project heat" aria-labelledby="hw">
+      <div class="wrap">
+        <h2 id="hw">HeatWatch</h2>
+        <p class="pitch">Live monitoring, savings tracking and alerts for waste heat recovery air preheaters.</p>
+        <p class="stack">Python, FastAPI, SQLAlchemy, WebSockets, Chart.js, Docker, GitHub Actions</p>
+        <p>Plant managers see how much heat each preheater recovers right now, what that's worth in fuel dollars and CO₂, and get warned before the three classic failures get expensive: cold-end corrosion, air leakage and fouling. Sensor data is simulated by one thread per unit, and the hosted demo injects a new fault every few minutes so you can watch alerts fire and resolve.</p>
+        <a class="shot" href="https://heatwatch.onrender.com/"><img src="img/heatwatch.jpg" width="1400" height="1080" alt="HeatWatch dashboard showing fleet totals for heat recovered, fuel savings and CO₂ avoided, health cards for four preheater units, and live temperature and pressure charts."></a>
+        <ul class="points">
+          <li>Telemetry pipeline with physics-checked validation, derived engineering metrics, and alert rules with hysteresis so borderline readings don't spam.</li>
+          <li>Signed outbound webhooks (HMAC-SHA256) delivered by a worker pool with retries and backoff, plus a signed inbound webhook from a maintenance system with replay protection.</li>
+          <li>Live gas prices from the EIA API and local weather from Open-Meteo, refreshed by a background thread into a thread-safe cache.</li>
+          <li>A Python SDK, 59 tests including architecture tests that fail CI if a change breaks the layering, and a Docker image published on every push.</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="https://heatwatch.onrender.com/">Open the live demo</a>
+          <a class="btn secondary" href="https://heatwatch.onrender.com/docs">API docs</a>
+          <a class="btn secondary" href="https://github.com/shivamgaikaiwari/HeatWatch">Source code</a>
+        </div>
+        <p class="hint">Hosted on a free server that sleeps when idle; the first visit can take up to a minute to wake it.</p>
+      </div>
+    </section>
+
+    <section class="project sky" aria-labelledby="wr">
+      <div class="wrap">
+        <h2 id="wr">Weather Report</h2>
+        <p class="pitch">Search any city for current conditions and a 7-day forecast.</p>
+        <p class="stack">Kotlin, Jetpack Compose, MVVM, Coroutines and StateFlow, Retrofit, JUnit, MockWebServer; web version in plain JavaScript</p>
+        <p>A native Android app with a clean MVVM split: the Compose screen renders state, the ViewModel owns it and cancels stale searches, and a repository chains the geocoding and forecast APIs. Unit tests cover JSON parsing, mapping, the repository against a mock server, and every ViewModel state transition. The browser version keeps the same layers so you can try it without installing anything.</p>
+        <a class="shot" href="https://shivamgaikaiwari.github.io/WeatherReport/"><img src="img/weather.jpg" width="800" height="1100" alt="Weather Report showing current conditions for London and a 7-day forecast drawn as temperature range bars."></a>
+        <div class="links">
+          <a class="btn primary" href="https://shivamgaikaiwari.github.io/WeatherReport/">Try it in your browser</a>
+          <a class="btn secondary" href="https://github.com/shivamgaikaiwari/WeatherReport/releases/latest/download/weather-report.apk">Android APK</a>
+          <a class="btn secondary" href="https://github.com/shivamgaikaiwari/WeatherReport">Source code</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project small" aria-labelledby="more">
+      <div class="wrap">
+        <h2 id="more">Smaller projects</h2>
+        <dl>
+          <dt><a href="https://github.com/shivamgaikaiwari/Go_Moves">Go_Moves</a></dt>
+          <dd>The board game Go on a 9×9 grid in the terminal, with coordinate input, move validation and two-player turns. Python.</dd>
+          <dt><a href="https://github.com/shivamgaikaiwari/ASCII-Clock">ASCII-Clock</a></dt>
+          <dd>Renders any time as large ASCII digits, with 12/24-hour conversion and custom characters. Python.</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Shivam Gaikaiwari · <a href="https://github.com/shivamgaikaiwari">github.com/shivamgaikaiwari</a></div>
+  </footer>
+</body>
+</html>
